@@ -1,10 +1,11 @@
 import UIKit
 
 protocol TrackerCellDelegate: AnyObject {
-    func didTapCompleteButton(of cell: TrackerCell, with traker: Tracker)
+    func didTapCompleteButton(of cell: TrackerCell, with tracker: Tracker)
 }
 
 final class TrackerCell: UICollectionViewCell {
+    // MARK: - Properties
     
     static let identifier = "TrackerCell"
     weak var delegate: TrackerCellDelegate?
@@ -15,7 +16,7 @@ final class TrackerCell: UICollectionViewCell {
         }
     }
     
-    // MARK: - Layout
+    // MARK: - Layout elements
     
     private let cardView: UIView = {
         let view = UIView()
@@ -51,7 +52,7 @@ final class TrackerCell: UICollectionViewCell {
     }()
     
     private let daysCountLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textColor = .black
@@ -61,16 +62,18 @@ final class TrackerCell: UICollectionViewCell {
     private lazy var completeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "Add tracker"), for: .normal)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         button.layer.cornerRadius = 17
         button.addTarget(self, action: #selector(didTapCompleteButton), for: .touchUpInside)
         return button
     }()
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupContent()
         setupConstraints()
     }
@@ -83,11 +86,11 @@ final class TrackerCell: UICollectionViewCell {
         super.prepareForReuse()
         tracker = nil
         days = 0
-        completeButton.setImage(UIImage(named: "Add tracker"), for: .normal)
+        completeButton.setImage(UIImage(systemName: "plus"), for: .normal)
         completeButton.layer.opacity = 1
     }
     
-    //MARK: - Func
+    // MARK: - Func
     
     func configure(with tracker: Tracker, days: Int, isCompleted: Bool) {
         self.tracker = tracker
@@ -104,7 +107,7 @@ final class TrackerCell: UICollectionViewCell {
             completeButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
             completeButton.layer.opacity = 0.3
         } else {
-            completeButton.setImage(UIImage(named: "Add tracker"), for: .normal)
+            completeButton.setImage(UIImage(systemName: "plus"), for: .normal)
             completeButton.layer.opacity = 1
         }
     }
@@ -117,15 +120,16 @@ final class TrackerCell: UICollectionViewCell {
         days -= 1
     }
     
-    //MARK: - Actions Button
+    // MARK: - Actions
+    
     @objc
     private func didTapCompleteButton() {
-        guard let tracker else {return}
+        guard let tracker else { return }
         delegate?.didTapCompleteButton(of: self, with: tracker)
     }
 }
 
-//MARK: - Exstension
+// MARK: - Layout methods
 
 private extension TrackerCell {
     func setupContent() {
@@ -139,31 +143,31 @@ private extension TrackerCell {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-        cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
-        cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        cardView.heightAnchor.constraint(equalToConstant: 90),
-        
-        iconView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 12),
-        iconView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 12),
-        iconView.widthAnchor.constraint(equalToConstant: 24),
-        iconView.heightAnchor.constraint(equalTo: iconView.widthAnchor),
-        
-        emoji.centerXAnchor.constraint(equalTo: iconView.centerXAnchor),
-        emoji.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
-        
-        trackerLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 12),
-        trackerLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -12),
-        trackerLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -12),
-        
-        daysCountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-        daysCountLabel.centerYAnchor.constraint(equalTo: completeButton.centerYAnchor),
-        daysCountLabel.trailingAnchor.constraint(equalTo: completeButton.trailingAnchor, constant: -8),
-        
-        completeButton.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 8),
-        completeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-        completeButton.widthAnchor.constraint(equalToConstant: 34),
-        completeButton.heightAnchor.constraint(equalTo: completeButton.widthAnchor)
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 90),
+            
+            iconView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 12),
+            iconView.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 12),
+            iconView.widthAnchor.constraint(equalToConstant: 24),
+            iconView.heightAnchor.constraint(equalTo: iconView.widthAnchor),
+            
+            emoji.centerXAnchor.constraint(equalTo: iconView.centerXAnchor),
+            emoji.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
+            
+            trackerLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 12),
+            trackerLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -12),
+            trackerLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -12),
+            
+            daysCountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            daysCountLabel.centerYAnchor.constraint(equalTo: completeButton.centerYAnchor),
+            daysCountLabel.trailingAnchor.constraint(equalTo: completeButton.leadingAnchor, constant: -8),
+            
+            completeButton.topAnchor.constraint(equalTo: cardView.bottomAnchor, constant: 8),
+            completeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            completeButton.widthAnchor.constraint(equalToConstant: 34),
+            completeButton.heightAnchor.constraint(equalTo: completeButton.widthAnchor),
         ])
     }
 }

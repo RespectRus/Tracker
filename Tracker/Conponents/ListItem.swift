@@ -1,6 +1,6 @@
 import UIKit
 
-final class ListItems: UIView {
+final class ListItem: UIView {
     private let border: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -11,19 +11,19 @@ final class ListItems: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupeView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configure(with position: Position = .middle) {
         layer.masksToBounds = true
         layer.cornerRadius = 10
         
         switch position {
-            case .first:
+        case .first:
             layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             border.isHidden = false
         case .middle:
@@ -31,12 +31,12 @@ final class ListItems: UIView {
             border.isHidden = false
         case .last:
             layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        case .alon:
+        case .alone:
             break
         }
     }
     
-    private func setupeView() {
+    private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 16
         backgroundColor = .background
@@ -51,10 +51,11 @@ final class ListItems: UIView {
     }
 }
 
-extension ListItems {
+extension ListItem {
     enum Position {
-        case first, middle, last, alon
+        case first, middle, last, alone
     }
     
-    static let heigth: CGFloat = 75
+    static let height: CGFloat = 75
 }
+

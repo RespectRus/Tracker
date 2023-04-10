@@ -1,11 +1,12 @@
 import UIKit
 
-final class TrackerCategoryLabel: UICollectionReusableView {
+final class SelectionTitle: UICollectionReusableView {
+    static let identifier = "SelectionTitle"
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 19)
         return label
     }()
     
@@ -15,7 +16,7 @@ final class TrackerCategoryLabel: UICollectionReusableView {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28),
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
@@ -24,7 +25,7 @@ final class TrackerCategoryLabel: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+ 
     func configure(with label: String) {
         titleLabel.text = label
     }

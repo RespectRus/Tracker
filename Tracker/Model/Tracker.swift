@@ -15,16 +15,16 @@ struct Tracker: Identifiable {
         self.schedule = schedule
     }
     
-    init(traker: Tracker) {
-        self.id = traker.id
-        self.label = traker.label
-        self.emoji = traker.emoji
-        self.color = traker.color
-        self.schedule = traker.schedule
+    init(tracker: Tracker) {
+        self.id = tracker.id
+        self.label = tracker.label
+        self.emoji = tracker.emoji
+        self.color = tracker.color
+        self.schedule = tracker.schedule
     }
     
     init(data: Data) {
-        guard let emoji = data.emoji, let color = data.colors else {fatalError()}
+        guard let emoji = data.emoji, let color = data.color else { fatalError() }
         
         self.id = UUID()
         self.label = data.label
@@ -34,7 +34,7 @@ struct Tracker: Identifiable {
     }
     
     var data: Data {
-        Data(label: label, emoji: emoji, colors: color, schedule: schedule)
+        Data(label: label, emoji: emoji, color: color, schedule: schedule)
     }
 }
 
@@ -42,7 +42,7 @@ extension Tracker {
     struct Data {
         var label: String = ""
         var emoji: String? = nil
-        var colors: UIColor? = nil
+        var color: UIColor? = nil
         var schedule: [Weekday]? = nil
     }
 }
@@ -51,17 +51,17 @@ enum Weekday: String, CaseIterable, Comparable {
     case monday = "Понедельник"
     case tuesday = "Вторник"
     case wednesday = "Среда"
-    case thursday = "Четверг"
+    case thurshday = "Четверг"
     case friday = "Пятница"
     case saturday = "Суббота"
     case sunday = "Воскресенье"
     
-    var shortFrom: String {
+    var shortForm: String {
         switch self {
         case .monday: return "Пн"
         case .tuesday: return "Вт"
         case .wednesday: return "Ср"
-        case .thursday: return "Чт"
+        case .thurshday: return "Чт"
         case .friday: return "Пт"
         case .saturday: return "Сб"
         case .sunday: return "Вс"
@@ -73,6 +73,7 @@ enum Weekday: String, CaseIterable, Comparable {
             let first = Self.allCases.firstIndex(of: lhs),
             let second = Self.allCases.firstIndex(of: rhs)
         else { return false }
+        
         return first < second
     }
 }
