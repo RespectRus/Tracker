@@ -197,8 +197,9 @@ private extension TrackersViewController {
             datePicker.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
             searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            searchBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            searchBar.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
             searchBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            searchBar.heightAnchor.constraint(equalToConstant: 36),
             
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
@@ -312,7 +313,7 @@ extension TrackersViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UISearchBarDelegate
 extension TrackersViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.setShowsCancelButton(true, animated: true)
+        searchBar.setShowsCancelButton(false, animated: true)
         return true
     }
     
