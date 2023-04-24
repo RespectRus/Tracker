@@ -1,11 +1,14 @@
 import UIKit
 
 final class ListCell: UITableViewCell {
+    
     //MARK: - Properties
+    
     private lazy var listItem = ListItem()
     static let identifier = "ListCell"
     
     //MARK: - Layout
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,6 +42,7 @@ final class ListCell: UITableViewCell {
     }()
     
     //MARK: - Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -51,6 +55,7 @@ final class ListCell: UITableViewCell {
     }
     
     //MARK: - Func
+    
     func configure(label: String, value: String?, position: ListItem.Position) {
         listItem.configure(with: position)
         nameLabel.text = label
@@ -62,6 +67,7 @@ final class ListCell: UITableViewCell {
 }
 
 //MARK: - Extension
+
 private extension ListCell {
     func setupContent() {
         selectionStyle = .none
