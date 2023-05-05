@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "Model")
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                assertionFailure("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
