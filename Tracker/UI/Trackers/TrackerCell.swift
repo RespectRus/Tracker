@@ -5,6 +5,7 @@ protocol TrackerCellDelegate: AnyObject {
 }
 
 final class TrackerCell: UICollectionViewCell {
+    
     // MARK: - Properties
     
     static let identifier = "TrackerCell"
@@ -82,6 +83,8 @@ final class TrackerCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Func
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         tracker = nil
@@ -89,8 +92,6 @@ final class TrackerCell: UICollectionViewCell {
         completeButton.setImage(UIImage(systemName: "plus"), for: .normal)
         completeButton.layer.opacity = 1
     }
-    
-    // MARK: - Func
     
     func configure(with tracker: Tracker, days: Int, isCompleted: Bool) {
         self.tracker = tracker

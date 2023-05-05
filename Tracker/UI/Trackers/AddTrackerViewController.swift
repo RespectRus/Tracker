@@ -5,6 +5,22 @@ protocol AddTrackerViewControllerDelegate: AnyObject {
 }
 
 final class AddTrackerViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    weak var delegate: AddTrackerViewControllerDelegate?
+    private var labelText = ""
+    private var category: String?
+    private var schedule: [Weekday]?
+    private var emoji: String?
+    private var color: UIColor?
+    private var isConfirmButtonEnabled: Bool {
+        labelText.count > 0 && !isValidationMessageVisible
+    }
+    private var isValidationMessageVisible = false
+    private var parameters = ["Категория", "Расписание"]
+    private let colors = UIColor.selection
+    
     // MARK: - Layout elements
     
     private lazy var addHabitButton: UIButton = {
@@ -25,24 +41,7 @@ final class AddTrackerViewController: UIViewController {
         return stack
     }()
     
-    // MARK: - Properties
     
-    weak var delegate: AddTrackerViewControllerDelegate?
-    
-    private var labelText = ""
-    private var category: String?
-    private var schedule: [Weekday]?
-    private var emoji: String?
-    private var color: UIColor?
-    
-    private var isConfirmButtonEnabled: Bool {
-        labelText.count > 0 && !isValidationMessageVisible
-    }
-    
-    private var isValidationMessageVisible = false
-    private var parameters = ["Категория", "Расписание"]
-    private let colors = UIColor.selection
-
     // MARK: - Lifecycle
     
     override func viewDidLoad() {

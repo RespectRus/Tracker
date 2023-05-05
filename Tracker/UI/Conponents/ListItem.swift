@@ -17,7 +17,7 @@ final class ListItem: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func configure(with position: Position = .middle) {
         layer.masksToBounds = true
         layer.cornerRadius = 10
@@ -55,7 +55,6 @@ extension ListItem {
     enum Position {
         case first, middle, last, alone
     }
-    
     static let height: CGFloat = 75
 }
 
