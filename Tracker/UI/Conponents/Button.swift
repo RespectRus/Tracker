@@ -1,7 +1,7 @@
 import UIKit
 
 final class Button: UIButton {
-    convenience init(color: UIColor = .black, title: String) {
+    convenience init(color: UIColor = .black, titleColor: UIColor = .white, title: String) {
         self.init(type: .system)
         
         setTitle(title, for: .normal)
@@ -15,7 +15,6 @@ final class Button: UIButton {
     
     static func danger(title: String) -> Self {
         let button = self.init(color: .clear, title: title)
-        
         button.setTitleColor(.red, for: .normal)
         button.layer.borderColor = UIColor.red.cgColor
         button.layer.borderWidth = 1

@@ -11,6 +11,8 @@
 		305032AB29D580BA00BD497B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305032AA29D580BA00BD497B /* SceneDelegate.swift */; };
 		305032B229D580BC00BD497B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305032B129D580BC00BD497B /* Assets.xcassets */; };
 		305032B529D580BC00BD497B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305032B329D580BC00BD497B /* LaunchScreen.storyboard */; };
+		305D0F122A0CEB290075CDEC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F112A0CEB290075CDEC /* OnboardingViewController.swift */; };
+		305D0F142A0CEB410075CDEC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F132A0CEB410075CDEC /* OnboardingPageViewController.swift */; };
 		307A32EC29F6C85500706F54 /* SelectionCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A32EB29F6C85500706F54 /* SelectionCellProtocol.swift */; };
 		307A32EF29F6CE7500706F54 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 307A32ED29F6CE7500706F54 /* Model.xcdatamodeld */; };
 		30CE537B29E4154B00A24577 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE537A29E4154B00A24577 /* ScheduleViewController.swift */; };
@@ -52,6 +54,8 @@
 		305032B129D580BC00BD497B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		305032B429D580BC00BD497B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		305032B629D580BC00BD497B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305D0F112A0CEB290075CDEC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		305D0F132A0CEB410075CDEC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		307A32EB29F6C85500706F54 /* SelectionCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCellProtocol.swift; sourceTree = "<group>"; };
 		307A32EE29F6CE7500706F54 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		30CE537A29E4154B00A24577 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 			path = Tracker;
 			sourceTree = "<group>";
 		};
+		305D0F102A0CEAFF0075CDEC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				305D0F112A0CEB290075CDEC /* OnboardingViewController.swift */,
+				305D0F132A0CEB410075CDEC /* OnboardingPageViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		30AB982C29F6B2540061FB29 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 		30CE538629F1578B00A24577 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				305D0F102A0CEAFF0075CDEC /* Onboarding */,
 				30EF766029DD857400C9FAD9 /* Conponents */,
 				30EF765229DD7E1B00C9FAD9 /* TabBar */,
 				30EF766529DD916100C9FAD9 /* Trackers */,
@@ -327,6 +341,7 @@
 				30EF765929DD80A200C9FAD9 /* Date+Extensions.swift in Sources */,
 				30EF765729DD7F0600C9FAD9 /* UIColor+Extensions.swift in Sources */,
 				30CE538329E4248100A24577 /* SelectionTitle.swift in Sources */,
+				305D0F122A0CEB290075CDEC /* OnboardingViewController.swift in Sources */,
 				30EF768129E07B9B00C9FAD9 /* ListCell.swift in Sources */,
 				30CE538C29F162ED00A24577 /* TrackerStore.swift in Sources */,
 				30EF766229DD859600C9FAD9 /* TextField.swift in Sources */,
@@ -335,6 +350,7 @@
 				30EF767B29E06AE700C9FAD9 /* TrackerFormViewController.swift in Sources */,
 				30CE537B29E4154B00A24577 /* ScheduleViewController.swift in Sources */,
 				30EF766429DD85AB00C9FAD9 /* ListItem.swift in Sources */,
+				305D0F142A0CEB410075CDEC /* OnboardingPageViewController.swift in Sources */,
 				30EF766729DD918400C9FAD9 /* TrackersViewController.swift in Sources */,
 				30EF767329DDAFF400C9FAD9 /* TreckerCategoryLabel.swift in Sources */,
 				30CE538129E4247100A24577 /* ColorCell.swift in Sources */,
