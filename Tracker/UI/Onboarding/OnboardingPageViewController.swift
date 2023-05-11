@@ -15,7 +15,7 @@ final class OnboardingPageViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 32)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -42,14 +42,15 @@ final class OnboardingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setupContent()
+        setupConstraints()
     }
 }
 
 // MARK: - Layout methods
 
 private extension OnboardingPageViewController {
-    func setupeContent() {
+    func setupContent() {
         imageView.image = backgroundImage
         label.text = text
         
@@ -57,13 +58,13 @@ private extension OnboardingPageViewController {
         view.addSubview(label)
     }
     
-    func setupeConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageView.topAnchor.constraint(equalTo: view.topAnchor),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
+          
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             label.topAnchor.constraint(equalTo: view.centerYAnchor),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)

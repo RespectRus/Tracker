@@ -2,7 +2,8 @@ import UIKit
 
 final class OnboardingViewController: UIPageViewController {
     
-    //MARK: - Properties
+    // MARK: - Properties
+    
     var onConfirm: (() -> Void)?
     private let pages: [UIViewController] = [
         OnboardingPageViewController(
@@ -15,13 +16,17 @@ final class OnboardingViewController: UIPageViewController {
         )
     ]
     
-    //MARK: - Layout elements
+    // MARK: - Layout elements
+    
     private lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
+        
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = 0
+        
         pageControl.currentPageIndicatorTintColor = .black
+        
         return pageControl
     }()
     
@@ -31,24 +36,27 @@ final class OnboardingViewController: UIPageViewController {
         return button
     }()
     
-    //MARK: - ViewDidLoad
+    
+    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupContext()
+        setupContent()
+        setupConstraints()
     }
     
-    //MARK: - Action
+    // MARK: - Actions
+    
     @objc
     private func didTapConfirmButton() {
         onConfirm?()
     }
 }
 
-//MARK: - Layout methods
+// MARK: - Layout methods
 
-extension OnboardingViewController {
-    func setupContext() {
+private extension OnboardingViewController {
+    func setupContent() {
         dataSource = self
         delegate = self
         
@@ -76,7 +84,8 @@ extension OnboardingViewController {
         ])
     }
 }
-//MARK: - UIPageViewControllerDataSource
+
+// MARK: - UIPageViewControllerDataSource
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -108,14 +117,19 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
     }
 }
 
-//MARK: - UIPageViewControllerDelegate
+// MARK: - UIPageViewControllerDelegate
 
 extension OnboardingViewController: UIPageViewControllerDelegate {
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        didFinishAnimating finished: Bool,
+        previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool
+    ) {
         guard
             let currentViewController = pageViewController.viewControllers?.first,
             let currentIndex = pages.firstIndex(of: currentViewController)
-        else {return}
+        else { return }
         
         pageControl.currentPage = currentIndex
     }

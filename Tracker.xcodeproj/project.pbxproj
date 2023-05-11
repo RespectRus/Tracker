@@ -13,6 +13,8 @@
 		305032B529D580BC00BD497B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305032B329D580BC00BD497B /* LaunchScreen.storyboard */; };
 		305D0F122A0CEB290075CDEC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F112A0CEB290075CDEC /* OnboardingViewController.swift */; };
 		305D0F142A0CEB410075CDEC /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F132A0CEB410075CDEC /* OnboardingPageViewController.swift */; };
+		305D0F172A0D121E0075CDEC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F162A0D121E0075CDEC /* RootViewController.swift */; };
+		305D0F192A0D141F0075CDEC /* UserDefaultsBacked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D0F182A0D141F0075CDEC /* UserDefaultsBacked.swift */; };
 		307A32EC29F6C85500706F54 /* SelectionCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A32EB29F6C85500706F54 /* SelectionCellProtocol.swift */; };
 		307A32EF29F6CE7500706F54 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 307A32ED29F6CE7500706F54 /* Model.xcdatamodeld */; };
 		30CE537B29E4154B00A24577 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE537A29E4154B00A24577 /* ScheduleViewController.swift */; };
@@ -56,6 +58,8 @@
 		305032B629D580BC00BD497B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		305D0F112A0CEB290075CDEC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		305D0F132A0CEB410075CDEC /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		305D0F162A0D121E0075CDEC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		305D0F182A0D141F0075CDEC /* UserDefaultsBacked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsBacked.swift; sourceTree = "<group>"; };
 		307A32EB29F6C85500706F54 /* SelectionCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCellProtocol.swift; sourceTree = "<group>"; };
 		307A32EE29F6CE7500706F54 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		30CE537A29E4154B00A24577 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		305D0F152A0D12010075CDEC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				305D0F162A0D121E0075CDEC /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		30AB982C29F6B2540061FB29 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +173,7 @@
 		30CE538629F1578B00A24577 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				305D0F152A0D12010075CDEC /* Root */,
 				305D0F102A0CEAFF0075CDEC /* Onboarding */,
 				30EF766029DD857400C9FAD9 /* Conponents */,
 				30EF765229DD7E1B00C9FAD9 /* TabBar */,
@@ -210,6 +223,7 @@
 				30EF765C29DD841100C9FAD9 /* UICollectionView+Extension.swift */,
 				30CE538729F15A2D00A24577 /* UIColorMarshalling.swift */,
 				30EF765629DD7F0600C9FAD9 /* UIColor+Extensions.swift */,
+				305D0F182A0D141F0075CDEC /* UserDefaultsBacked.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -339,7 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30EF765929DD80A200C9FAD9 /* Date+Extensions.swift in Sources */,
+				305D0F192A0D141F0075CDEC /* UserDefaultsBacked.swift in Sources */,
 				30EF765729DD7F0600C9FAD9 /* UIColor+Extensions.swift in Sources */,
+				305D0F172A0D121E0075CDEC /* RootViewController.swift in Sources */,
 				30CE538329E4248100A24577 /* SelectionTitle.swift in Sources */,
 				305D0F122A0CEB290075CDEC /* OnboardingViewController.swift in Sources */,
 				30EF768129E07B9B00C9FAD9 /* ListCell.swift in Sources */,
