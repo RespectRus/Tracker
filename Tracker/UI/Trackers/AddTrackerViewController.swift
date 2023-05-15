@@ -41,7 +41,6 @@ final class AddTrackerViewController: UIViewController {
         return stack
     }()
     
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {

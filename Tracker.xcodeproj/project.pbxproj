@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				30CE538929F162A000A24577 /* CoreData */,
-				30CE538629F1578B00A24577 /* UI */,
 				30AB982C29F6B2540061FB29 /* Supporting Files */,
+				30CE538629F1578B00A24577 /* UI */,
 				305032A829D580BA00BD497B /* AppDelegate.swift */,
 				305032AA29D580BA00BD497B /* SceneDelegate.swift */,
 				305032B329D580BC00BD497B /* LaunchScreen.storyboard */,
@@ -173,15 +173,15 @@
 		30CE538629F1578B00A24577 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				305D0F152A0D12010075CDEC /* Root */,
-				305D0F102A0CEAFF0075CDEC /* Onboarding */,
 				30EF766029DD857400C9FAD9 /* Conponents */,
-				30EF765229DD7E1B00C9FAD9 /* TabBar */,
-				30EF766529DD916100C9FAD9 /* Trackers */,
-				30EF766829DD91C800C9FAD9 /* Statistics */,
-				30CE537929E4153800A24577 /* Schedule */,
 				30EF767929E06AA100C9FAD9 /* Form */,
 				30EF765529DD7EE100C9FAD9 /* Helpers */,
+				305D0F102A0CEAFF0075CDEC /* Onboarding */,
+				305D0F152A0D12010075CDEC /* Root */,
+				30EF766829DD91C800C9FAD9 /* Statistics */,
+				30CE537929E4153800A24577 /* Schedule */,
+				30EF765229DD7E1B00C9FAD9 /* TabBar */,
+				30EF766529DD916100C9FAD9 /* Trackers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -189,8 +189,8 @@
 		30CE538929F162A000A24577 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				30CE538A29F162C600A24577 /* Store */,
 				30EF767429DDB2F000C9FAD9 /* Model */,
+				30CE538A29F162C600A24577 /* Store */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -198,8 +198,8 @@
 		30CE538A29F162C600A24577 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				30CE538B29F162ED00A24577 /* TrackerStore.swift */,
 				30CE538D29F1630500A24577 /* TrackerCategoryStore.swift */,
+				30CE538B29F162ED00A24577 /* TrackerStore.swift */,
 				30CE538F29F1632600A24577 /* TrackerRecordStore.swift */,
 			);
 			path = Store;
