@@ -174,7 +174,6 @@
 				305032AA29D580BA00BD497B /* SceneDelegate.swift */,
 				305032B329D580BC00BD497B /* LaunchScreen.storyboard */,
 				305032B629D580BC00BD497B /* Info.plist */,
-				305D10CB2A1CDE5A0075CDEC /* EditCategory */,
 				30AB982C29F6B2540061FB29 /* Supporting Files */,
 			);
 			path = Tracker;
@@ -228,13 +227,6 @@
 				30EF765E29DD856800C9FAD9 /* HeaderReusableView.swift */,
 			);
 			path = Custom;
-			sourceTree = "<group>";
-		};
-		305D10CB2A1CDE5A0075CDEC /* EditCategory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EditCategory;
 			sourceTree = "<group>";
 		};
 		305D10D42A1CE01D0075CDEC /* UI */ = {
@@ -385,20 +377,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		30CE537929E4153800A24577 /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
 		30CE538629F1578B00A24577 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				30EF765229DD7E1B00C9FAD9 /* TabBar */,
 				30EF766529DD916100C9FAD9 /* Trackers */,
 				30EF765529DD7EE100C9FAD9 /* Helpers */,
-				30CE537929E4153800A24577 /* Schedule */,
 			);
 			path = UI;
 			sourceTree = "<group>";
