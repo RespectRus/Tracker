@@ -9,6 +9,7 @@ protocol TrackerCategoryStoreProtocol: AnyObject {
     func getTrackerCategoryCoreData(by indexPath: IndexPath) -> TrackerCategoryCoreData?
     func deleteCategory(delete: TrackerCategoryCoreData)
     func changeCategory(at indexPath: IndexPath, newCategoryTitle: String?)
+    func getTrackerCategoryCoreData(byCategoryId id: String) -> TrackerCategoryCoreData?
 }
 
 final class TrackerCategoryStore: NSObject {
@@ -22,7 +23,7 @@ final class TrackerCategoryStore: NSObject {
     lazy var fetchedResultsController: NSFetchedResultsController<TrackerCategoryCoreData> = {
         let fetchRequest = NSFetchRequest<TrackerCategoryCoreData>(entityName: "TrackerCategoryCoreData")
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(keyPath: \TrackerCategoryCoreData.title, ascending: true)
+            NSSortDescriptor(keyPath: \TrackerCategoryCoreData.createdAt, ascending: true)
         ]
         let fetchedResultController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
@@ -41,6 +42,16 @@ final class TrackerCategoryStore: NSObject {
     convenience override init() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         self.init(context: context)
+        
+        let isEnabled = UserDefaults.standard.bool(forKey: Constants.creatPinnedCategory)
+        guard !isEnabled else { return }
+        creatPinnedCategory()
+    }
+    
+    private func creatPinnedCategory() {
+        let trackerCategory = TrackerCategory(title: Constants.pinnedCategory)
+        addTrackerCategoryCoreData(from: trackerCategory)
+        UserDefaults.standard.set(true, forKey: Constants.creatPinnedCategory)
     }
     
     
@@ -65,6 +76,8 @@ extension TrackerCategoryStore: TrackerCategoryStoreProtocol {
     func addTrackerCategoryCoreData(from trackerCategory: TrackerCategory) {
         let trackerCategoryCoreData = TrackerCategoryCoreData(context: context)
         trackerCategoryCoreData.title = trackerCategory.title
+        trackerCategoryCoreData.createdAt = Date()
+        trackerCategoryCoreData.idCategory = UUID().uuidString
         saveContext()
     }
     
@@ -90,5 +103,10 @@ extension TrackerCategoryStore: TrackerCategoryStoreProtocol {
         let oldCategory = fetchedResultsController.object(at: indexPath)
         oldCategory.title = newCategoryTitle
         saveContext()
+    }
+    
+    func getTrackerCategoryCoreData(byCategoryId id: String) -> TrackerCategoryCoreData? {
+        guard let categoriesCoreData = fetchedResultsController.fetchedObjects else { return nil }
+        return categoriesCoreData.first(where: { id == $0.idCategory })
     }
 }
