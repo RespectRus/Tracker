@@ -1,47 +1,47 @@
 // Onboarding
-"First label onboarding text" = "Track only you want";
-"Second label onboarding text" = "Even if it's not liters of water and yoga";
-"Onboarding button title" = "Here is the technology!";
+"First label onboarding text" = "Отслеживайте только то, что хотите";
+"Second label onboarding text" = "Даже если это не литры воды и йога";
+"Onboarding button title" = "Вот это технологии!";
 
 // PlugViewType
-"Trackers plug" = "What will we track?";
-"Search plug" = "Nothing found";
-"Category plug" = "Habits and events can be combined in meaning";
-"Statistic plug" = "Nothing to analyze";
+"Trackers plug" = "Что будем отслеживать?";
+"Search plug" = "Ничего не найдено";
+"Category plug" = "Привычки и события можно объединить по смыслу";
+"Statistic plug" = "Анализировать пока нечего";
 
 //TabBarController
-"TabBarItemTracker" = "Trackers";
-"TabBarItemStatistics" = "Statistics";
+"TabBarItemTracker" = "Трекеры";
+"TabBarItemStatistics" = "Статистика";
 
 //TypeTrackerViewController
-TypeTrackerViewControllerTitle = "Create tracker";
+TypeTrackerViewControllerTitle = "Создание трекера";
 
 //TypeTrackerView
-HabitButtonTitle = "Habit";
-EventButtonTitle = "Not a regular event";
+HabitButtonTitle = "Привычка";
+EventButtonTitle = "Нерегулярное событие";
 
 //TrackersViewController
-SearchBarPlaceholderText = Search;
-SearchBarCancelButtonText = Cancel;
-deleteActionSheetMessage = "Delete this tracker?";
-deleteActionTitle = Delete;
-cancelActionSheetButtonTitle = Cancel;
-editActionTitle = Edit;
+SearchBarPlaceholderText = "Поиск";
+SearchBarCancelButtonText = "Отмена";
+deleteActionSheetMessage = "Уверены что хотите удалить трекер?";
+deleteActionTitle = "Удалить";
+cancelActionSheetButtonTitle = "Отменить";
+editActionTitle = "Редактировать";
 
-everyDay = "Every day";
-pinnedCategory = "Pinned";
+everyDay = "Каждый день";
+pinnedCategory = "Закрепленные";
 
-toPinTracker = "To pin";
-toUnpinTracker = "To unpin";
+toPinTracker = "Закрепить";
+toUnpinTracker = "Открепить";
 
-filterTitle = Filters;
+filterTitle = "Фильтры";
 
-AllTrackers = "All trackers";
-TrackersForToday = "Trackers for today";
-Completed = Completed;
-NotCompleted = "Not completed";
-
-"Best period" = "Best period";
-"Perfect days" = "Perfect days";
-"Completed trackers" = "Completed trackers";
-"Average Value" = "Average Value";
+AllTrackers = "Все трекеры";
+TrackersForToday = "Трекеры на сегодня";
+Completed = "Завершенные";
+NotCompleted = "Не завершенные";
+   
+"Best period" = "Лучший период";
+"Perfect days" = "Идеальные дни";
+"Completed trackers" = "Трекеров завершено";
+"Average Value" = "Среднее значение";
