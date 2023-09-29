@@ -39,6 +39,6 @@ final class DataProviderStub: DataProviderProtocol {
     func saveTracker(_ tracker: Tracker, in categoryCoreData: TrackerCategoryCoreData) throws {}
     func resaveTracker(at indexPath: IndexPath, newTracker: Tracker, category: TrackerCategoryCoreData?) throws {}
     func deleteTracker(at indexPath: IndexPath) throws {}
-    func pinned(tracker: PinnedTracker, pinned: Pinned) {}
+    func pin(tracker: PinnedTracker, pinned: PinStatus) {}
     func checkPerfectDay(forDate date: Date) {}
 }

@@ -1,6 +1,6 @@
 import CoreData
 
-enum Pinned {
+enum PinStatus {
     case pinned
     case unpinned
 }
@@ -39,7 +39,7 @@ protocol DataProviderProtocol {
     func resaveTracker(at indexPath: IndexPath, newTracker: Tracker, category: TrackerCategoryCoreData?) throws
     func deleteTracker(at indexPath: IndexPath) throws
     
-    func pinned(tracker: PinnedTracker, pinned: Pinned)
+    func pin(tracker: PinnedTracker, pinned: PinStatus)
     
     func checkPerfectDay(forDate date: Date)
 }
@@ -226,7 +226,7 @@ extension DataProvider: DataProviderProtocol {
         try fetchedResultsController.performFetch()
     }
     
-    func pinned(tracker: PinnedTracker, pinned: Pinned) {
+    func pin(tracker: PinnedTracker, pinned: PinStatus) {
         var category: TrackerCategoryCoreData?
         var isPinned: Bool = false
         var idCategory: String?

@@ -315,8 +315,8 @@ final class TrackersViewController: UIViewController {
         return scheduleArray.joined(separator: ", ")
     }
     
-    private func pinnedTracker(tracker: PinnedTracker, isPinned: Pinned) {
-        dataProvider.pinned(tracker: tracker, pinned: isPinned)
+    private func pinnedTracker(tracker: PinnedTracker, isPinned: PinStatus) {
+        dataProvider.pin(tracker: tracker, pinned: isPinned)
         collectionView.reloadData()
     }
     
@@ -499,7 +499,7 @@ extension TrackersViewController: UIContextMenuInteractionDelegate {
                         idOldCategory: category.idCategory,
                         trackerIndexPath: indexPath
                     )
-                    let pinned: Pinned = tracker.isPinned ? .unpinned : .pinned
+                    let pinned: PinStatus = tracker.isPinned ? .unpinned : .pinned
                     self.pinnedTracker(tracker: pinnedTracker, isPinned: pinned)
                 },
                 UIAction(title: ViewControllerConstants.editActionTitle) { [weak self] _ in
