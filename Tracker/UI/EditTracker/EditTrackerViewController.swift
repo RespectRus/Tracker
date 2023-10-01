@@ -91,7 +91,7 @@ extension EditTrackerViewController: EditTrackerViewDelegate {
             name: nameTracker,
             color: color,
             emoji: emoji,
-            schedule: datesArray,
+            schedule: editTracker.tracker.schedule,
             isHabit: editTracker.tracker.isHabit,
             isPinned: editTracker.tracker.isPinned,
             idCategory: editTracker.tracker.idCategory
